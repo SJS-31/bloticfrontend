@@ -1,31 +1,32 @@
 import React from "react";
-// import HLine from "./h-line";
 
-function Card(props){
-    return(
-        // <div className="cardline">
-        // <HLine />
-        <div className={`container2 ${props.className}`}>
-        <div className="card">
-            <div className="face face1">
-                <div className="content">
-                    <div className="icon">
-                      <h1>Web3 Basics</h1>
-                    </div>
-                </div>
+
+const Card = ({className, cardHeading, buttons }) => {
+  return (
+    <div className={`roadmap-container ${className}`}>
+      <div className="roadmap-card">
+        <div className="roadmap-face roadmap-face1">
+          <div className="roadmap-content">
+            <div className="roadmap-icon">
+              <h1>{cardHeading}</h1>
             </div>
-            <div className="face face2">
-                <div className="content">
-                    <h3>
-                        _adamdipinto
-                    </h3>
-                    <p>This is where I network and build my professional protfolio.</p>
-                </div>
-            </div>
+          </div>
         </div>
+        <div className="roadmap-face roadmap-face2">
+          <div className="roadmap-content">
+          <ul className="roadmap-card-sub-menu">
+            {buttons.map((button, index) => (
+              <a key={index} href={button.link}>
+                <li className="roadmap-card-menu-item">{button.label}</li>
+              </a>
+            ))}
+            </ul>
+          </div>
         </div>
-        // </div>
-    );
-}
+      </div>
+    </div>
+    // </div>
+  );
+};
 
 export default Card;

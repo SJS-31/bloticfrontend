@@ -1,44 +1,90 @@
 import { useState } from "react";
 
-import logo1 from "../../assets/Contact.jpg";
+import Education from "../../assets/Educationhm.png";
+import Emplyoment from "../../assets/HJVJVSVVS.png";
+import Bounty from "../../assets/bounty.png";
+import Event from "../../assets/Event.png";
+import Icon from "../../assets/arrow-right (1).png";
 
 const Cards = () => {
   const [cards] = useState([
     {
       id: 1,
-      title: "Education-1",
-      text: "Our vision is that anyone, everywhere in the world, will be able to use blockchain as a vehicle to create wealth for themselves andWe serve our students by providing an abundance of resources such as Crypto Taxes, Intro to Virtual Land, DeFi and many more. We empower students to host workshops at their universities, and build their network while cultivating communities and creating career opportunities",
+      title: "Education",
+      src: Education,
+      href:"Learning",
+      text: "Students are educated on web3 technology through workshops, hackathons, challenges etc.",
     },
     {
       id: 2,
-      title: "Education-2",
-      text: "Our vision is that anyone, everywhere in the world, will be able to use blockchain as a vehicle to create wealth for themselves andWe serve our students by providing an abundance of resources such as Crypto Taxes, Intro to Virtual Land, DeFi and many more. We empower students to host workshops at their universities, and build their network while cultivating communities and creating career opportunities",
+      title: "Emplyoment",
+      src: Emplyoment,
+      href:"https://app.recorem.com/event-partner/310/community",
+      text: "We provide internship and placement opportunities to students who are a part of the Blotic ecosystem.",
     },
-
     {
       id: 3,
-      title: "Education-3",
-      text: "Our vision is that anyone, everywhere in the world, will be able to use blockchain as a vehicle to create wealth for themselves andWe serve our students by providing an abundance of resources such as Crypto Taxes, Intro to Virtual Land, DeFi and many more. We empower students to host workshops at their universities, and build their network while cultivating communities and creating career opportunities",
+      title: "Events",
+      src: Event,
+      href:"events",
+      text: "Our events aim to increase awareness and provide practical exposure to students about web3 technology.",
     },
-
     {
       id: 4,
-      title: "Education-4",
-      text: "Our vision is that anyone, everywhere in the world, will be able to use blockchain as a vehicle to create wealth for themselves andWe serve our students by providing an abundance of resources such as Crypto Taxes, Intro to Virtual Land, DeFi and many more. We empower students to host workshops at their universities, and build their network while cultivating communities and creating career opportunities",
+      title: "Bounty",
+      src: Bounty,
+      href:"Bounty",
+      text: "Discover a world of opportunities with our bounty program. Join our community and start earning!",
     },
   ]);
+
+  const [showFullText, setShowFullText] = useState(false);
+
+  const toggleShowFullText = () => {
+    setShowFullText(!showFullText);
+  };
+
   return (
-    <div className="container w-full md:w-1/2 flex flex-wrap items-center justify-center mt-20 md:mt-0">
-      {cards.map((card, id) => {
+    <div className="flex flex-wrap justify-center mt-12 lg:mt-0 lg:w-1/2">
+      {cards.map((card) => {
         return (
           <div
-            key={id}
-            className="max-w-xs overflow-hidden shadow-md m-1 mb-6 items-center justify-center rounded-3xl bg-gray-50 px-4 py-8 text-center"
+            key={card.id}
+            className="max-w-xs w-full overflow-hidden shadow-md m-1 mb-6 rounded-3xl about-prob-card"
           >
-            <img src={logo1} className="w-1/2 mx-auto mb-4" alt="logo" />
+            <img src={card.src} className="  mx-auto" alt="logo" />
             <div className="p-4">
-              <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-              <p className="text-gray-600 h-20 overflow-hidden">{card.text}</p>
+              <a
+                href={card.link}
+                className="flex items-center text-lg font-bold mb-2"
+              >
+                <p className="text-lg font-bold text-blue-500 mb-2">
+                  {card.title}
+                </p>
+                
+              </a>
+
+              {/* <h3 className="text-lg font-bold text-blue-500 mb-2">
+                {card.title}
+              </h3> */}
+
+              <p className="text-neutral-200 h-20  overflow-hidden">
+                {showFullText?card.text:`${card.text.slice(0, 100)}...`}
+              </p>
+              
+              <button className="bg-blue-500 text-gray-200 rounded-md py-1 px-2 text-sm"><a href={card.href}>Read More</a></button>
+
+              {/* <p className="text-neutral-200 h-20 overflow-hidden">
+                {showFullText ? card.text : `${card.text.slice(0, 100)}...`}
+              </p> */}
+              {/* {card.text.length > 100 && (
+                <button
+                  className="text-blue-300 hover:text-blue-500"
+                  onClick={toggleShowFullText}
+                >
+                  {showFullText ? "Read less" : "Read more"}
+                </button>
+              )} */}
             </div>
           </div>
         );

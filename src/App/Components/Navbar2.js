@@ -35,7 +35,7 @@ const products = [
 
   {
     name: "Logout",
-    href: "#",
+    href: "/Login",
     icon: ArrowLeftOnRectangleIcon,
   },
 ];
@@ -52,7 +52,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className=" bg-black bg-opacity-30 fixed top-0 z-50 w-full">
+    <header className=" bg-none bg-opacity-30 fixed top-0 z-50 w-full">
       <nav
         className="mx-auto flex max-w-7xl   items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -60,7 +60,7 @@ export default function Example() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img className="h-8 w-auto" src={logo} alt="" />
+            <img className="h-12 w-auto" src={logo} alt="" />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -74,27 +74,27 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/Learning"
-            className="text-sm font-semibold leading-6 text-gray-900"
+          <Link to="/Bounty"
+            className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
           >
             Bounty
           </Link>
-          <Link to="/profile"
-            className="text-sm font-semibold leading-6 text-gray-900"
+          <Link to="/Learning"
+            className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
           >
             Learning
           </Link>
-          {/* <Link to="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </Link> */}
-          <Link to="/contact-us" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/events" className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white">
+            Events
+          </Link>
+          <Link to="/About" className="text-lg leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white">
             About
           </Link>
         </Popover.Group>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ export default function Example() {
               leaveFrom="opacity-100 translate-y-0"
               leaveTo="opacity-0 translate-y-1"
             >
-              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+              <Popover.Panel className="absolute -right-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 {/* products */}
                 <div className="p-4">
                   {products.map((item) => (
@@ -133,7 +133,7 @@ export default function Example() {
                     >
                       <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                         <item.icon
-                          className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                          className="h-6 w-6 text-gray-600 group-hover:text-blue-600"
                           aria-hidden="true"
                         />
                       </div>
@@ -170,7 +170,7 @@ export default function Example() {
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                className="h-8 w-auto"
+                className="h-12 w-auto"
                 src={logo}
                 alt=""
               />
@@ -188,17 +188,17 @@ export default function Example() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 
-                <Link to="/Learning"
+                <Link to="/Bounty"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Bounty
                 </Link>
-                <Link to="#"
+                <Link to="/Learning"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Learning
                 </Link>
-                <Link to="/contact-us"
+                <Link to="/About"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   About

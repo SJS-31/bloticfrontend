@@ -1,4 +1,3 @@
-import myImg from "../../assets/MIT2.jpeg";
 
 const blog=[
     {
@@ -16,7 +15,7 @@ const blog=[
         compweb:"https://music.youtube.com/watch?v=zAU_rsoS5ok&list=RDAMVMIsb7WV4d17I",
         eval:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
         resource:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
-        href : "AboutUs/?id=1",
+        href : "BountyDesc/?id=1",
         apply:"https://music.youtube.com/watch?v=bw7bVpI5VcM&list=RDAMVMIsb7WV4d17I",
     },
     {
@@ -34,7 +33,7 @@ const blog=[
         compweb:"https://music.youtube.com/watch?v=zAU_rsoS5ok&list=RDAMVMIsb7WV4d17I",
         eval:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
         resource:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
-        href : "AboutUs/?id=2",
+        href : "BountyDesc/?id=2",
         apply:"https://music.youtube.com/watch?v=bw7bVpI5VcM&list=RDAMVMIsb7WV4d17I",
     },
     {
@@ -52,7 +51,7 @@ const blog=[
         compweb:"https://music.youtube.com/watch?v=zAU_rsoS5ok&list=RDAMVMIsb7WV4d17I",
         eval:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
         resource:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, libero iste quod quibusdam maxime recusandae odit eveniet, aspernatur culpa provident error molestiae vitae corporis in vero est! Beatae, ipsumvoluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor eligendi at temporibus unde, debitis tempora eius, enim aliquid, officia commodi vitae. Dignissimos ratione dolore maiores sit ipsam esse, recusandae molestiae.",
-        href : "AboutUs/?id=3",
+        href : "BountyDesc/?id=3",
         apply:"https://music.youtube.com/watch?v=bw7bVpI5VcM&list=RDAMVMIsb7WV4d17I",
     },
     {

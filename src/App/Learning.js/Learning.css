@@ -1,5 +1,9 @@
 body {
-  background-color: #f6f9fb;
+  /* background-color: #06191d; */
+  background-color: #0a090d;
+  /* background-color: rgb(32, 34, 37); */
+  /* background-image: url(../../assets/Bgblo.jpg); */
+  /* background-image: linear-gradient(to right, white , #e4eafc); */
 }
 
 .title {
@@ -56,6 +60,10 @@ body {
 
 /* card */
 
+.bounty-tilebg{
+  background-color: #0a0a0a;
+}
+
 .band {
   width: 100%;
   max-width: 1400px;
@@ -69,7 +77,7 @@ body {
   padding-right: 5%;
   margin-top: 70px;
   margin-bottom: 70px;
-  /* background-color: #008bf8; */
+  background-color: #0a0a0a;
 }
 @media (min-width: 30em) {
   .band {
@@ -175,7 +183,6 @@ body {
   background-position: center center;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
-  background-image: url("../../assets//bloticLogo.jpeg");
 }
 
 .thumb img {

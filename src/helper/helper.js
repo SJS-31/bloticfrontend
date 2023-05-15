@@ -1,8 +1,5 @@
 import axios from "axios";
 
-
-
-
   const finduser = async (data)=>{
      await axios.post('http://192.168.0.107:8080/api/finduser', data)
     .then(response => {
@@ -12,8 +9,6 @@ import axios from "axios";
       console.error('Error:', error);
     });
   }
-
-
 
   const getuser = async (data)=>{
     await axios.post('http://192.168.0.107:8080/api/getuser', data)

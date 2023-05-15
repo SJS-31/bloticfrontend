@@ -19,13 +19,13 @@ class FooterRightComponent extends Component{
                     },
 
                     {
-                        nav_name: "Articles",
-                        nav_to: "#"
+                        nav_name: "Learning",
+                        nav_to: "/Learning"
                     },
 
                     {
-                        nav_name: "Community",
-                        nav_to: "#"
+                        nav_name: "About-US",
+                        nav_to: "/About"
                     },
 
                     {

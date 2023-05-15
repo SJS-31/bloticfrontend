@@ -1,48 +1,64 @@
 import "./Roadmap.css";
 import Button from "./button";
 import FlowChart from "./flowchart";
+import Sidebar from "./slider";
+import Navbar2 from "../Components/Navbar2";
+import FooterSection from "../HomePage/FooterSection/footer";
 
-function Roadmap() {
+function App() {
   return (
     <div>
-    <section>
+      <Navbar2 />
+      <section className="roadmap-section">
+        <div className="roadmap-heading">
+          <div>
+            <h1>
+              Embark on your journey in
+              <br />
+              WEB3 with us!
+            </h1>
+            <p>
+              Discover the essential resources and steps needed to successfully
+              traverse the landscape of WEB3 development,
+              <br />  from blockchain basics
+              and smart contracts to decentralized applications and beyond.
+            </p>
 
-      <div className="heading">
+            <Button />
+          </div>
+        </div>
+
+        <div className="roadmap-air roadmap-air1"></div>
+        <div className="roadmap-air roadmap-air2"></div>
+        <div className="roadmap-air roadmap-air3"></div>
+        <div className="roadmap-air roadmap-air4"></div>
+
+        {/* rectangles */}
+
+        <div className="roadmap-area">
+          <ul className="roadmap-circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </section>
+      <Sidebar />
+      <h1 className="roadmap-heading-flowchart">0-1 WEB3 Roadmap</h1>
+
       <div>
-      <h1>Lorem ipsum understanding<br /> Lorem Ipsum.</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-      eiusmod<br /> tempor incididunt ut labore et dolore magna aliqua.</p>
-
-      <Button />
+        <FlowChart />
       </div>
-      </div>
-
-      <div className="air air1"></div>
-      <div className="air air2"></div>
-      <div className="air air3"></div>
-      <div className="air air4"></div>
-
-      {/* rectangles */}
-
-      <div className="area">
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </section>
-
-    <FlowChart />
+      <FooterSection />
     </div>
   );
 }
 
-export default Roadmap;
+export default App;

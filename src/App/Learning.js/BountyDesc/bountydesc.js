@@ -3,8 +3,9 @@ import "./bountydesc.css";
 import blog from "../blogs";
 import Head from "./header";
 import FooterSection from "../../HomePage/FooterSection/footer";
-import TopBarSection from "../../HomePage/TopBarSection/topbarSection";
+import Navbar2 from '../../Components/Navbar2'
 import FAQ from "./FAQ";
+
 
 function bountydesc() {
   const string = window.location.search;
@@ -20,59 +21,30 @@ function bountydesc() {
   // })
   return (
     <div>
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <svg
-          className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
-          aria-hidden="true"
-        >
-          <defs>
-            <pattern
-              id="e813992c-7d03-4cc4-a2bd-151760b470a0"
-              width={100}
-              height={100}
-              x="50%"
-              y={-1}
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M100 200V.5M.5 .5H200" fill="none" />
-            </pattern>
-          </defs>
-          <svg x="50%" y={-1} className="overflow-visible fill-gray-50">
-            <path
-              d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
-              strokeWidth={0}
-            />
-          </svg>
-          <rect
-            width="100%"
-            height="100%"
-            strokeWidth={0}
-            fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
-          />
-        </svg>
-      </div>
-      <TopBarSection />
+      
+      <Navbar2 />
       {blog.map((data, index) => {
         if (data.id == query.get("id")) {
           return (
             <div key={`${index}`}>
-              <div className="Container flex-col box-border">
-                <div className="header h-40 mt-20 lg:mt-32 border-2 rounded-lg border-sky-700 shadow-lg flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500">
+              <div className="BountContainer flex-col box-border">
+                <div className="header h-40 mt-20 lg:mt-32 border-2 rounded-lg border-sky-700 shadow-lg flex items-center justify-center bg-gradient-to-r from-gray-700 to-slate-900">
+                {/* style={{ backgroundImage: `url(${gifBackground})` }} */}
                   <h1 className="text-2xl lg:text-4xl text-zinc-50">
                     {data.company}
                   </h1>
                 </div>
 
-                <h1 className="text-4xl font-semibold p-10 ">{data.heading}</h1>
+                <h1 className="text-4xl text-slate-300 font-semibold p-10 ">{data.heading}</h1>
 
                 <div className="flex flex-col lg:flex-row">
-                  <div className="header mb-10 w-full lg:w-3/4 p-4 border-2 rounded-lg border-sky-700 shadow-lg  items-center justify-center ">
+                  <div className="header mb-10 w-full lg:w-3/4 p-4 bg-gray-800 rounded-lg  shadow-lg  items-center justify-center ">
                     <div className="flex w-full md:w-auto">
                       <div class=" p-4">
                         <h1 className="text-2xl text-sky-600 font-semibold">
                           About Bounty:-
                         </h1>
-                        <p class=" text-base font-light leading-relaxed">
+                        <p class=" text-base text-slate-300 font-light leading-relaxed">
                           {data.desc}
                         </p>
 
@@ -106,7 +78,7 @@ function bountydesc() {
                             </a>
                           </div>
                         </div>
-                        <p class=" text-base font-light leading-relaxed">
+                        <p class=" text-base text-slate-300 font-light leading-relaxed">
                           {data.abtcomp}
                         </p>
 
@@ -115,7 +87,7 @@ function bountydesc() {
                         <h1 className="text-2xl font-semibold text-sky-600 ">
                           Evaluation Criteria:-
                         </h1>
-                        <p class=" text-base font-light leading-relaxed">
+                        <p class=" text-base text-slate-300 font-light leading-relaxed">
                           {data.eval}
                         </p>
                         <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
@@ -123,7 +95,7 @@ function bountydesc() {
                         <h1 className="text-2xl font-semibold text-sky-600 ">
                           Resources:-
                         </h1>
-                        <p class=" text-base font-light leading-relaxed">
+                        <p class=" text-base text-slate-300 font-light leading-relaxed">
                           {data.resource}
                         </p>
 
@@ -134,32 +106,32 @@ function bountydesc() {
                     </div>
                   </div>
                   <div class="w-full lg:w-1/4 mb-4 lg:ml-4 ">
-                    <div class="bg-white p-4 rounded-md shadow-md">
-                      <h2 class="text-lg font-bold mb-3">Required Skills</h2>
+                    <div class="bg-gray-800 p-4 rounded-md shadow-md">
+                      <h2 class="text-lg text-slate-300 font-bold mb-3">Required Skills</h2>
                       <div class="list-disc  mb-4 flex space-x-4">
-                        <button class="border border-sky-700 text-blue-500 hover:border-gray-700 hover:text-gray-700 py-1 px-2 rounded-full">
+                        <button class="border border-sky-700 text-blue-500 hover:border-slate-300 hover:text-slate-300 py-1 px-2 rounded-full">
                           {data.skill1}
                         </button>
-                        <button class="border border-sky-700 text-blue-500 hover:border-gray-700 hover:text-gray-700 py-1 px-2 rounded-full">
+                        <button class="border border-sky-700 text-blue-500 hover:border-slate-300 hover:text-slate-300 py-1 px-2 rounded-full">
                           {data.skill2}
                         </button>
                       </div>
                       <div class="list-disc  mb-4 flex space-x-4">
-                        <button class="border border-sky-700 text-blue-500 hover:border-gray-700 hover:text-gray-700 py-1 px-2 rounded-full">
+                        <button class="border border-sky-700 text-blue-500 hover:border-slate-300 hover:text-slate-300 py-1 px-2 rounded-full">
                           {data.skill1}
                         </button>
-                        <button class="border border-sky-700 text-blue-500 hover:border-gray-700 hover:text-gray-700 py-1 px-2 rounded-full">
+                        <button class="border border-sky-700 text-blue-500 hover:border-slate-300 hover:text-slate-300 py-1 px-2 rounded-full">
                           {data.skill2}
                         </button>
                       </div>
-                      <h2 class="text-lg font-bold mb-1">Incentives</h2>
+                      <h2 class="text-lg text-slate-300 font-bold mb-1">Incentives</h2>
                       <button class="bg-green-600  w-1/4 text-white text-lg font-bold py-1 px-4 rounded ">
                         {data.inr}
                       </button>
                       <hr class="my-4 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
 
                       <div className="flex mt-2">
-                        <h1 className="text-lg font-bold mr-8 text-center">
+                        <h1 className="text-lg text-slate-300 font-bold mr-8 text-center">
                           Dealine: {data.deadline}{" "}
                         </h1>
                       </div>
@@ -176,7 +148,6 @@ function bountydesc() {
         }
       })}
 
-      <FAQ />
       <FooterSection />
     </div>
   );

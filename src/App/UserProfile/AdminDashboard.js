@@ -4,20 +4,20 @@ import { finduser } from "../../helper/helper.js";
 import { useState } from "react";
 import TopBarSection from "../HomePage/TopBarSection/topbarSection.js";
 
-const data = {
-  username: "luv",
-};
+// const data = {
+//   username: "luv",
+// };
 
-const data2 = {
-  username: "luv",
-  password: "erer",
-  about: "LUADA LASSUN",
-  tagline: "bhak teri ....e",
-  coins: "1000",
-};
+// const data2 = {
+//   username: "luv",
+//   password: "erer",
+//   about: "LUADA LASSUN",
+//   tagline: "bhak teri ....e",
+//   coins: "1000",
+// };
 
-finduser(data);
-getuser(data2);
+// finduser(data);
+// getuser(data2);
 
 export default function Example() {
   const [inputValue, setInputValue] = useState("");

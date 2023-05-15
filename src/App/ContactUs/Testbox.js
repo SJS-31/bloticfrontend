@@ -6,15 +6,22 @@ import Problem from './Problem'
 import Solution from './Solution'
 import AbtHeader from './AbtHeader'
 import Invitation from './Invitation'
-
+import flow1 from '../../assets/Flow/Flow1.jpg'
+import flow8 from '../../assets/Flow/Flow 8.jpg'
+import vm4 from '../../assets/Vm/Vm2.jpg'
+import nft1 from '../../assets/events_hedaer_2.jpeg'
+import mit8 from '../../assets/MIT5.jpeg'
+import vm7 from '../../assets/Vm/Vm7.jpg'
+import flow10 from '../../assets/Flow/Flow 10.jpg'
+import nft2 from '../../assets/i2-2.jpeg'
 export default function Example() {
   return (
     <>
     
-      <div className="relative isolate overflow-hidden bg-white  pt-24 sm:pt-32 lg:overflow-visible lg:px-0">
+      <div className="relative isolate overflow-hidden bg-black-8  pt-24 sm:pt-32 lg:overflow-visible lg:px-0">
       <Navbar />
         {/* Rectangke SVG */}
-        <div className="absolute inset-0 lg:visible invisible -z-10 overflow-hidden">
+        {/* <div className="absolute inset-0 lg:visible invisible -z-10 overflow-hidden">
           <svg
             className="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-cyan-100 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
             aria-hidden="true"
@@ -44,7 +51,7 @@ export default function Example() {
               fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
             />
           </svg>
-        </div>
+        </div> */}
 
         <AbtHeader/>
         
@@ -58,7 +65,7 @@ export default function Example() {
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
                   src={
-                    "https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"
+                    flow1
                   }
                 />
               </div>
@@ -66,14 +73,14 @@ export default function Example() {
                 <img
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"
+                  src={vm4}
                 />
               </div>
               <div class="w-full p-1 md:p-2">
                 <img
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+                  src={mit8}
                 />
               </div>
             </div>
@@ -82,21 +89,21 @@ export default function Example() {
                 <img
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"
+                  src={vm7}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"
+                src= {flow8}
                 />
               </div>
               <div class="w-1/2 p-1 md:p-2">
                 <img
                   alt="gallery"
                   class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"
+                  src={nft1}
                 />
               </div>
             </div>

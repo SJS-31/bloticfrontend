@@ -24,7 +24,7 @@ console.log(status_col)
       <a href={props.ref} className="card">
         <div className="thumb">
           <img src={myImg} alt="blog" />
-          <h1>Bounty1</h1>
+          {/* <h1>Bounty1</h1> */}
         </div>
         <div className="article">
           <h1>{props.heading}</h1>
@@ -41,7 +41,6 @@ console.log(status_col)
             
             <button   className="card-button" ><a href={props.href}>Read More</a></button>
 
-            {/* <button className="card-button"  onClick={handlecllick}>Read More</button> */}
           </div>
           
         </div>

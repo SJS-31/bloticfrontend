@@ -2,20 +2,21 @@ import Cards from "./cards";
 
 const Home2 = () => {
   return (
-    <div className="home2  bg-gradient-to-r from-white to-blue-100  pb-24">
-      <h1 className="flex items-center pb-24 justify-center lg:justify-around not-italic font-semibold text-5xl md:text-6xl lg:text-7xl pt-7 leading-16 lg:flex-row">
-        WHO WE ARE
-      </h1>
-      <div className="flex flex-col md:flex-row ">
-        <div className="content2 w-full md:w-1/2 justify-around pt-0">
-          <p className="font-normal not-italic leading-8 md:leading-10 lg:text-2xl mb-8 lg:p-20 mt-8 md:mt-24 text-center">
-            "BLOTIC" is an early-stage Web3 startup that serves as a gateway for
-            all newbies to explore Web3 and build their future there. At BLOTIC,
-            we are creating a pan-Indian community of blockchain enthusiasts.
+    <div className=" pb-24 lg:flex lg:flex-col lg:items-center lg:justify-center ml-10 mr-10 justify-around ">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-around">
+        <div className="w-full lg:w-1/2 flex flex-col lg:ml-8 lg:justify-start pt-8 lg:px-0">
+          <h1 className="font-semibold text-4xl text-left md:text-6xl text-gray-100 lg:text-7xl leading-16  mb-4 md:mb-8 ">
+            WHAT WE DO
+          </h1>
+          <p className="font-normal  leading-8 text-gray-300 md:leading-10 lg:text-2xl  lg:text-left mb-4 lg:mb-8">
+            BLOTIC is building a pan-Indian community of web3 enthusiasts
+            through a hybrid approach that blends online and offline
+            interactions. We're creating college chapters that prioritize
+            engagement, interactivity, gamification, and immersiveness.
           </p>
-          <div className="flex justify-center">
-            <button className="bg-indigo-500 px-6 py-3 shadow-lg text-white uppercase tracking-wider font-semibold text-sm hover:bg-indigo-400 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 transition rounded-full items-center">
-              Explore here
+          <div class=" lg:text-left">
+            <button class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 uppercase tracking-widest font-semibold text-sm lg:text-lg rounded-full shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              <a href="About">Explore Now</a>
             </button>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import TopbarSection from "../../HomePage/TopBarSection/topbarSection";
+import Navbar2 from '../../Components/Navbar2'
 import ImageSliderComponent from "./imageSliderComponent";
 
 class HeaderSection extends Component{
     render(){
         return(
             <div className="bg-black">
-                <TopbarSection />
+                <Navbar2 />
                 <ImageSliderComponent />
             </div>
         )

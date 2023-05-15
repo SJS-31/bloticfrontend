@@ -6,9 +6,11 @@ import HomePage from "./HomePage/home";
 import Learning from "./Learning.js/Learning";
 import BountyDesc from './Learning.js/BountyDesc/bountydesc';
 import UserProfile from './UserProfile/userprofile'
-// import Roadmap from './Roadmap/Roadmap'
+import Roadmap from './Roadmap/Roadmap'
 import HomeNew from './HomeNew/Homemain'
 import UserProfileform from './UserProfile/UserProfileform'
+import Login from './LoginPage/Login'
+import Signup from './LoginPage/Signup'
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -34,13 +36,15 @@ class App extends Component{
             <Routes>
                 <Route path="/" element={<HomeNew />} />
                 <Route path="/events" element={<EventsPage />} />
-                {/* <Route path="/AboutUs" element={<BountyDesc />} /> */}
-                <Route path="/contact-us" element={<ContactUs />} />
+                <Route path="/BountyDesc" element={<BountyDesc />} />
+                <Route path="/About" element={<ContactUs />} />
                 <Route path="/web-3-hive" element={<Web3Hive />} />
-                <Route path="/Learning" element={<Learning />} />
+                <Route path="/Bounty" element={<Learning />} />
                 <Route path="/Profile" element={<UserProfile />} />
-                {/* <Route path="/Roadmap" element={<Roadmap />} /> */}
+                <Route path="/Learning" element={<Roadmap />} />
                 <Route path="/HomeNew" element={<HomeNew />} />
+                <Route path="/Login" element={<Login />} />
+                <Route path="/Signup" element={<Signup />} />
                 <Route path="/UserProfileform" element={<UserProfileform />} />
             </Routes>
         )

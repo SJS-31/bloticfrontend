@@ -9,6 +9,7 @@ import linkedin from "../../assets/linkedin.png";
 import github from "../../assets/githubicon.png";
 import { getuser } from "../../helper/helper";
 import  useState  from "react";
+import coin1 from '../../assets/icons8-coin-80 (1).png'
 // const data2 = {
 //   username: "luv",
 //   password: "erer",
@@ -28,31 +29,31 @@ export default function Userprofile() {
     <div>
       <Navbar />
       {/* Profile */}
-      <div class="bg-gray-100">
+      <div class="bg-gray">
         <div class="container mt-20 mx-auto py-8">
           <img src="" alt="" />
           <div class="grid grid-cols-4  sm:grid-cols-12 gap-6 px-4">
-            <div class="col-span-4 sm:col-span-3">
-              <div class="bg-white shadow rounded-lg p-6">
+            <div class="col-span-4  sm:col-span-3">
+              <div class="bg-slate-800  shadow rounded-lg p-6">
                 <div class="flex flex-col items-center">
                   <img
                     src="https://randomuser.me/api/portraits/men/94.jpg"
                     class="w-32 h-32 bg-gray-300 rounded-full mb-4 shrink-0"
                   ></img>
-                  <h1 class="text-xl font-bold">Jhon Doe</h1>
-                  <p class="text-gray-600">Software Developer</p>
+                  <h1 class="text-xl text-slate-100 font-bold">Jhon Doe</h1>
+                  <p class="text-slate-400">Software Developer</p>
                   <div class="mt-6 flex flex-wrap gap-3 justify-center">
-                    <img src={coin} alt="" />
-                    <h1 className="font-bold text-2xl py-3 ">200</h1>
+                    <img className="w-12 h-12" src={coin1} alt="" />
+                    <h1 className="font-bold text-2xl text-slate-300  py-3 ">200</h1>
                   </div>
                 </div>
                 <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
 
                 <div class="flex flex-col">
-                  <span class="text-blue-600 uppercase font-bold text-xl mb-2">
+                  <span class="text-cyan-500 uppercase font-bold text-xl mb-2">
                     Skills
                   </span>
-                  <ul className="pl-4 list-disc">
+                  <ul className="pl-4 text-slate-300 list-disc">
                     <li class="mb-2">JavaScript</li>
                     <li class="mb-2">React</li>
                     <li class="mb-2">Node.js</li>
@@ -100,12 +101,12 @@ export default function Userprofile() {
               </div>
             </div>
             <div class="col-span-4 sm:col-span-9">
-              <div class="bg-white shadow rounded-lg p-6">
+              <div class="bg-slate-800   shadow rounded-lg p-6">
                 <div className="flex justify-between">
-                <h2 class="text-xl font-bold text-blue-600 mb-4">About Me</h2>
+                <h2 class="text-xl font-bold text-cyan-500 mb-4">About Me</h2>
                 
                 </div>
-                <p class="text-gray-700">
+                <p class="text-slate-300">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                   finibus est vitae tortor ullamcorper, ut vestibulum velit
                   convallis. Aenean posuere risus non velit egestas suscipit.
@@ -117,18 +118,17 @@ export default function Userprofile() {
 
                 <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
 
-                <h2 class="text-xl font-bold text-blue-600 mt-6 mb-4">
-                  Experience
+                <h2 class="text-xl font-bold text-cyan-500 mt-6 mb-4">
+                  Projects
                 </h2>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-gray-600 font-bold">Web Developer</span>
+                    <span class="text-slate-400 font-bold">Snake Game</span>
                     <p>
-                      <span class="text-gray-600 mr-2">at ABC Company</span>
-                      <span class="text-gray-600">2017 - 2019</span>
+                      <span class="text-slate-400">2017 - 2019</span>
                     </p>
                   </div>
-                  <p class="mt-2">
+                  <p class="mt-2 text-slate-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     finibus est vitae tortor ullamcorper, ut vestibulum velit
                     convallis. Aenean posuere risus non velit egestas suscipit.
@@ -136,13 +136,12 @@ export default function Userprofile() {
                 </div>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-gray-600 font-bold">Web Developer</span>
+                    <span class="text-slate-400 font-bold">Calculator</span>
                     <p>
-                      <span class="text-gray-600 mr-2">at ABC Company</span>
-                      <span class="text-gray-600">2017 - 2019</span>
+                      <span class="text-slate-400">2017 - 2019</span>
                     </p>
                   </div>
-                  <p class="mt-2">
+                  <p class="mt-2 text-slate-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     finibus est vitae tortor ullamcorper, ut vestibulum velit
                     convallis. Aenean posuere risus non velit egestas suscipit.
@@ -150,13 +149,12 @@ export default function Userprofile() {
                 </div>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-gray-600 font-bold">Web Developer</span>
+                    <span class="text-slate-400 font-bold">Tic Tac Toe</span>
                     <p>
-                      <span class="text-gray-600 mr-2">at ABC Company</span>
-                      <span class="text-gray-600">2017 - 2019</span>
+                      <span class="text-slate-400">2017 - 2019</span>
                     </p>
                   </div>
-                  <p class="mt-2">
+                  <p class="mt-2 text-slate-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     finibus est vitae tortor ullamcorper, ut vestibulum velit
                     convallis. Aenean posuere risus non velit egestas suscipit.

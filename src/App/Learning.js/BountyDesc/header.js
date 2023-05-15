@@ -1,8 +1,11 @@
+import React from 'react'
+import bountyhead from '../../../assets/bountyhead.png'
+
 const links = [
-    { name: 'Open roles', href: '#' },
-    { name: 'Internship program', href: '#' },
-    { name: 'Our values', href: '#' },
-    { name: 'Meet our leadership', href: '#' },
+    { name: 'Open roles', href: 'https://app.recorem.com/event-partner/310/community'  },
+    { name: 'Resourses', href: 'Learning' },
+    { name: 'Our Events', href: 'events' },
+    { name: 'About US', href: 'About' },
   ]
   const stats = [
     { name: 'Offices worldwide', value: '12' },
@@ -10,12 +13,13 @@ const links = [
     { name: 'Hours per week', value: '40' },
     { name: 'Paid time off', value: 'Unlimited' },
   ]
-  
+
+
   export default function Example() {
     return (
-      <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+      <div className="relative isolate overflow-hidden bg-neutral-950 py-24 sm:py-32">
         <img
-          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+          src={bountyhead}
           alt=""
           className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
         />
@@ -24,7 +28,7 @@ const links = [
           aria-hidden="true"
         >
           <div
-            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#13e1ec] to-[#241bd7] opacity-20"
+            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#1b1b1b] to-[#03021d] opacity-20"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -36,7 +40,7 @@ const links = [
           aria-hidden="true"
         >
           <div
-            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#13e2f0] to-[#2015f0] opacity-20"
+            className="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#111111] to-[#03021b] opacity-20"
             style={{
               clipPath:
                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
@@ -44,11 +48,10 @@ const links = [
           />
         </div>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Work with us</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat fugiat aliqua.
+          <div className="mx-auto max-w-3xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-white lg:text-5xl">LEARN | EXECUTE | EARN</h2>
+            <p className="mt-6 text-lg font-bold leading-8 text-gray-300">
+            Small gigs, big rewards: Discover a world of opportunities with our bounty program. Join our community and start earning today!
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -59,14 +62,14 @@ const links = [
                 </a>
               ))}
             </div>
-            <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+            {/* <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat) => (
                 <div key={stat.name} className="flex flex-col-reverse">
                   <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
                   <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{stat.value}</dd>
                 </div>
               ))}
-            </dl>
+            </dl> */}
           </div>
         </div>
       </div>
