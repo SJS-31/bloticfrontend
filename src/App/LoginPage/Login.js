@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../assets/BLOTIC-OGO-(2)logo.png";
+import { useNavigate } from "react-router-dom";
+import { sendlogin } from "../../helper/helper";
 
 export default function Example() {
+   const navigate =  useNavigate()
+  const usernamesign = localStorage.getItem("usernamesign")
+ 
+  const [email  , setemail] = useState();
+  const [password  , setpassword] = useState();
+ const  handlesubmit=(event)=>{
+  event.preventDefault()
+  console.log(email , password)
+  sendlogin(email , password).then(()=>{
+    window.location.reload();
+  })
+  console.log("calling /Log")
+  // window.location.reload()
+ }
   return (
     <>
       <div className="h-screen">
@@ -19,16 +35,17 @@ export default function Example() {
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" action="#" method="" >
               <div>
                 <label
                   htmlFor="email"
                   className="block text-sm font-medium leading-6 text-white"
                 >
-                  Email address
+                  User Name
                 </label>
                 <div className="mt-2">
                   <input
+                    onChange={(e)=>{setemail(e.target.value)}}
                     id="email"
                     name="email"
                     type="email"
@@ -58,6 +75,7 @@ export default function Example() {
                 </div>
                 <div className="mt-2">
                   <input
+                   onChange={(e)=>{setpassword(e.target.value)}}
                     id="password"
                     name="password"
                     type="password"
@@ -69,12 +87,16 @@ export default function Example() {
               </div>
 
               <div>
-                <button
+               <a href="/Log">
+               <button
                   type="submit"
+                  
+                  onClick={handlesubmit}
                   className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign in
                 </button>
+               </a>
               </div>
             </form>
 

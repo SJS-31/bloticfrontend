@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../assets/BLOTIC-OGO-(2)logo.png";
+import { HandRaisedIcon } from "@heroicons/react/24/outline";
+import { senddata } from "../../helper/helper";
+import { useNavigate } from "react-router-dom";
 
 export default function Example() {
+  const [username, setusername] = useState("")
+  const [email, setemail] = useState("")
+  const [password, setpassword] = useState("")
+
+  const handlesubmit = (event) => {
+    event.preventDefault();
+    senddata(username , email ,password ).then((res)=>{console.log(res)
+      window.location.reload()
+    })
+  };
+
   return (
     <>
       <div className="h-screen">
@@ -19,7 +33,7 @@ export default function Example() {
             </div>
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-              <form className="space-y-6" action="#" method="POST">
+              <form className="space-y-6" action="#" method="">
                 <div>
                   <label
                     htmlFor="email"
@@ -29,6 +43,7 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={(e)=>{setemail(e.target.value)}}
                       id="email"
                       name="email"
                       type="email"
@@ -50,6 +65,7 @@ export default function Example() {
                   </div>
                   <div className="mt-2">
                     <input
+                     onChange={(e)=>{setpassword(e.target.value)}}
                       id="password"
                       name="password"
                       type="password"
@@ -71,6 +87,7 @@ export default function Example() {
                   </div>
                   <div className="mt-2">
                     <input
+                     onChange={(e)=>{setusername(e.target.value)}}
                       id="username"
                       name="username"
                       type="text"
@@ -83,6 +100,7 @@ export default function Example() {
 
                 <div>
                   <button
+                   onClick={handlesubmit}
                     type="submit"
                     className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
@@ -94,7 +112,7 @@ export default function Example() {
               <p className="mt-10 text-center text-lg text-gray-500">
                 Already a member?{" "}
                 <a
-                  href="/Login"
+                  href="/Log"
                   className="font-semibold text-lg leading-6 text-blue-600 hover:text-blue-500"
                 >
                   Sign In

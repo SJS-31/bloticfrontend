@@ -1,34 +1,85 @@
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { getuser } from "../../helper/helper.js";
-import { finduser } from "../../helper/helper.js";
-import { useState } from "react";
-import Navbar from '../Components/Navbar2';
+import { useEffect, useState } from "react";
+import Navbar from "../Components/Navbar2";
+import { sendformdata } from "../../helper/helper.js";
 
-const data = {
-  username: "luv",
-};
-
-const data2 = {
-  username: "luv",
-  password: "erer",
-  about: "LUADA LASSUN",
-  tagline: "bhak teri ....e",
-  coins: "1000",
-};
-
-finduser(data);
-getuser(data2);
+let data = {};
 
 export default function Example() {
-  const [inputValue, setInputValue] = useState("");
+  const handlechange = (event) => {
+    console.log(event.target.id);
+    console.log(event.target.value);
+    data = {
+      about: event.target.id === "about" ? event.target.value : data.about,
+      username:
+        event.target.id === "username" ? event.target.value : data.username,
+      firstname:
+        event.target.id === "firstname" ? event.target.value : data.firstname,
+      lastname:
+        event.target.id === "lastname" ? event.target.value : data.lastname,
+      email: event.target.id === "email" ? event.target.value : data.email,
+      country:
+        event.target.id === "country" ? event.target.value : data.country,
+      skill2: event.target.id === "skill2" ? event.target.value : data.skill2,
+      skill3: event.target.id === "skill3" ? event.target.value : data.skill3,
+      skill4: event.target.id === "skill4" ? event.target.value : data.skill4,
+      skill5: event.target.id === "skill5" ? event.target.value : data.skill5,
+      twitter:
+        event.target.id === "twitter" ? event.target.value : data.twitter,
+      linkedin:
+        event.target.id === "linkedin" ? event.target.value : data.linkedin,
+      insta: event.target.id === "insta" ? event.target.value : data.insta,
+      discord:
+        event.target.id === "discord" ? event.target.value : data.discord,
+      github: event.target.id === "github" ? event.target.value : data.github,
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+      companyname:
+        event.target.id === "companyname"
+          ? event.target.value
+          : data.companyname,
+      designation:
+        event.target.id === "designation"
+          ? event.target.value
+          : data.designation,
+      timeframe:
+        event.target.id === "timeframe" ? event.target.value : data.timeframe,
+      desc: event.target.id === "desc" ? event.target.value : data.desc,
+
+      companyname1:
+        event.target.id === "companyname1"
+          ? event.target.value
+          : data.companyname1,
+      designation1:
+        event.target.id === "designation1"
+          ? event.target.value
+          : data.designation1,
+      timeframe1:
+        event.target.id === "timeframe1" ? event.target.value : data.timeframe1,
+      desc1: event.target.id === "desc1" ? event.target.value : data.desc1,
+
+      companyname2:
+        event.target.id === "companyname2"
+          ? event.target.value
+          : data.companyname2,
+      designation2:
+        event.target.id === "designation2"
+          ? event.target.value
+          : data.designation2,
+      timeframe2:
+        event.target.id === "timeframe2" ? event.target.value : data.timeframe2,
+      desc2: event.target.id === "desc2" ? event.target.value : data.desc2,
+
+      skill1: event.target.id === "skill1" ? event.target.value : data.skill1,
+    };
+    console.log(data);
   };
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Input value:", inputValue);
+    sendformdata(data)
+    // console.log("Input value:", data);
   };
 
   return (
@@ -60,14 +111,12 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
-                        name="username"
+                        name="first-name"
                         id="username"
-                        value={inputValue}
-                        onChange={handleInputChange}
-                        autoComplete="username"
-                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder="sjs@31"
+                        autoComplete="given-name"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
                     </div>
                   </div>
@@ -82,6 +131,7 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <textarea
+                      onChange={handlechange}
                       id="about"
                       name="about"
                       rows={3}
@@ -153,9 +203,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="first-name"
-                      id="first-name"
+                      id="firstname"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -171,9 +222,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
-                      name="last-name"
-                      id="last-name"
+                      name="lastname"
+                      id="lastname"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -189,6 +241,7 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       id="email"
                       name="email"
                       type="email"
@@ -208,6 +261,7 @@ export default function Example() {
                   <div className="mt-2">
                     <select
                       id="country"
+                      onChange={handlechange}
                       name="country"
                       autoComplete="country-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
@@ -240,9 +294,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="first-name"
-                      id="first-name"
+                      id="skill1"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -259,8 +314,9 @@ export default function Example() {
                   <div className="mt-2">
                     <input
                       type="text"
+                      onChange={handlechange}
                       name="last-name"
-                      id="last-name"
+                      id="skill2"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -275,9 +331,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="first-name"
-                      id="first-name"
+                      id="skill3"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -293,9 +350,9 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
-                      type="text"
+                      onChange={handlechange}
                       name="last-name"
-                      id="last-name"
+                      id="skill4"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -310,9 +367,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="last-name"
-                      id="last-name"
+                      id="skill5"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -340,9 +398,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="first-name"
-                      id="first-name"
+                      id="twitter"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -358,9 +417,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="last-name"
-                      id="last-name"
+                      id="linkedin"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -375,9 +435,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="first-name"
-                      id="first-name"
+                      id="insta"
                       autoComplete="given-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -393,9 +454,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="last-name"
-                      id="last-name"
+                      id="discord"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -410,9 +472,10 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <input
+                      onChange={handlechange}
                       type="text"
                       name="last-name"
-                      id="last-name"
+                      id="github"
                       autoComplete="family-name"
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     />
@@ -445,9 +508,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="companyname"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -465,9 +529,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="designation"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -485,9 +550,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="timeframe"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="2017-2018"
@@ -505,7 +571,8 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <textarea
-                      id="about"
+                      onChange={handlechange}
+                      id="desc"
                       name="about"
                       rows={3}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -516,7 +583,9 @@ export default function Example() {
               </div>
 
               {/* Project-2 */}
-              <h3 className="font-sm font-semibold mt-10 text-gray-700">Project-2</h3>
+              <h3 className="font-sm font-semibold mt-10 text-gray-700">
+                Project-2
+              </h3>
               <div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-4">
                   <label
@@ -528,9 +597,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="companyname1"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -548,9 +618,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="designation1"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -568,9 +639,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="timeframe1"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="2017-2018"
@@ -588,7 +660,8 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <textarea
-                      id="about"
+                      onChange={handlechange}
+                      id="desc1"
                       name="about"
                       rows={3}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -599,7 +672,9 @@ export default function Example() {
               </div>
 
               {/* Project-3 */}
-              <h3 className="font-sm font-semibold mt-10 text-gray-700">Project-3</h3>
+              <h3 className="font-sm font-semibold mt-10 text-gray-700">
+                Project-3
+              </h3>
               <div className="mt-2 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                 <div className="sm:col-span-4">
                   <label
@@ -611,9 +686,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="companyname2"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -631,9 +707,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="designation2"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder=""
@@ -651,9 +728,10 @@ export default function Example() {
                   <div className="mt-2">
                     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                       <input
+                        onChange={handlechange}
                         type="text"
                         name="username"
-                        id="username"
+                        id="timeframe"
                         autoComplete="username"
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         placeholder="2017-2018"
@@ -671,7 +749,8 @@ export default function Example() {
                   </label>
                   <div className="mt-2">
                     <textarea
-                      id="about"
+                      onChange={handlechange}
+                      id="desc2"
                       name="about"
                       rows={3}
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

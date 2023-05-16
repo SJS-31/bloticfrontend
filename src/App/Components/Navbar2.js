@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+
 import {
   ArrowPathIcon,
   Bars3Icon,
@@ -21,24 +22,12 @@ import {
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/BLOTIC-OGO-(2)logo.png";
 
-const products = [
-  {
-    name: "Profile",
-    href: "/profile",
-    icon: UserCircleIcon,
-  },
-  {
-    name: "Edit Profile",
-    href: "/UserProfileform",
-    icon: UserPlusIcon,
-  },
 
-  {
-    name: "Logout",
-    href: "/Login",
-    icon: ArrowLeftOnRectangleIcon,
-  },
-];
+
+const handlelogout =()=>{
+  console.log("clcer loacl storage")
+}
+
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
   { name: "Contact sales", href: "#", icon: PhoneIcon },
@@ -49,6 +38,41 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+
+ const navigate = useNavigate()
+
+  const products = [
+    {
+      name: "Profile",
+      href: "/profile",
+      icon: UserCircleIcon,
+    },
+    {
+      name: "Edit Profile",
+      href: "/UserProfileform",
+      icon: UserPlusIcon,
+    },
+  
+    {
+      name: "Logout",
+      href: "/",
+      icon: ArrowLeftOnRectangleIcon,
+      myFunction(){
+        console.log("clcer loacl storage");
+        localStorage.removeItem("usernamesign");
+        localStorage.removeItem("username");
+        localStorage.removeItem("token");
+        console.log(localStorage)
+        const username = localStorage.getItem("username");
+        console.log("local username formm nav.js ", username);
+        window.location.reload()
+        navigate("/")
+    
+      }},
+    
+    
+  ];
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -138,7 +162,7 @@ export default function Example() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <Link to={item.href}
+                        <Link to={item.href} onClick={() => item.myFunction()}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
@@ -241,7 +265,7 @@ export default function Example() {
                           <Disclosure.Button
                             key={item.name}
                             as={Link}
-                            to={item.href}
+                            to={item.href } onClick={() => item.myFunction()}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}
