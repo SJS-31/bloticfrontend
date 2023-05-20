@@ -12,7 +12,7 @@ export default function AbtHeader() {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center text-center lg:text-left lg:px-60 lg:mt-10">
       <div className="lg:w-1/2 ">
-        <h1 className="lg:text-9xl lg:ml-0 text-left ml-10 text-5xl  text-white">
+        <h1 className="lg:text-8xl lg:ml-0 text-left ml-10 text-5xl  text-white">
           About Us
         </h1>
         <p className="lg:text-2xl lg:w-11/12 text-sm leading-4 text-left  px-10 lg:border-l-4 border-sky-900 lg:mt-5 opacity-90 p-3 rounded-xl shadow-md lg:p-5 text-white ">

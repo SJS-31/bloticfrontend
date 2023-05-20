@@ -11,22 +11,13 @@ import HomeNew from "./HomeNew/Homemain";
 import UserProfileform from "./UserProfile/UserProfileform";
 import Login from "./LoginPage/Login";
 import Signup from "./LoginPage/Signup";
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
 import Web3Hive from "./Web3Hive/web3hive";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+// import * as dotenv from 'dotenv'
+// dotenv.config()
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyCWFPDTdqjzq_bgM2PDDOaq-izB0sY7ELA",
-  authDomain: "bloticdemo.firebaseapp.com",
-  projectId: "bloticdemo",
-  storageBucket: "bloticdemo.appspot.com",
-  messagingSenderId: "1039707399775",
-  appId: "1:1039707399775:web:655c25851cc21ab0989dea",
-};
+// console.log(process.env)
+// Import the functions you need from the SDKs you need
+
 
 let username = "";
 let token = "";
@@ -40,7 +31,6 @@ const chklocaluser = () => {
 chklocaluser();
 // Initialize Firebase\
 
-const app = initializeApp(firebaseConfig);
 
 const App = () => {
   useEffect(chklocaluser, []);

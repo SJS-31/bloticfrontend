@@ -6,6 +6,8 @@ import blog from "./blogs";
 import Head from "./BountyDesc/header";
 import FooterSection from "../HomePage/FooterSection/footer";
 import Navbar from "../Components/Navbar2";
+import Compbounty from './Compbounty'
+
 function App() {
   return (
     <div className="bounty-tilebg">
@@ -14,7 +16,7 @@ function App() {
         <div className="band">
           {blog.map((blog) => (
             <Card
-              // src={blog.image}
+              src={blog.icon}
               heading={blog.heading}
               deadline={blog.deadline}
               status={blog.status}
@@ -25,7 +27,7 @@ function App() {
             />
           ))}
         </div>
-      
+        <Compbounty/>
       <FooterSection />
     </div>
   );

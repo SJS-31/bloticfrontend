@@ -29,8 +29,8 @@ class FooterRightComponent extends Component{
                     },
 
                     {
-                        nav_name: "Contact Us",
-                        nav_to: "#"
+                        nav_name: "Bounty",
+                        nav_to: "/Bounty"
                     },
                 ]
             },

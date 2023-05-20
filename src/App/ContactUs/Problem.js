@@ -2,7 +2,7 @@ import React from "react";
 import img from "../../assets/MIT4.jpeg";
 
 const gradientStyle = {
-  backgroundImage: 'linear-gradient(#141217, #0e0c12)',
+  backgroundImage: "linear-gradient(#141217, #0e0c12)",
 };
 
 export default function Problem() {
@@ -14,7 +14,7 @@ export default function Problem() {
       </p>
 
       <div className="flex flex-col lg:flex-row gap-5 lg:gap-8 py-5">
-        <div  className="p-3 bg-gray-50 about-prob-card  rounded-xl shadow-md lg:p-5 ">
+        <div className="p-3 bg-gray-50 about-prob-card  rounded-xl shadow-md lg:p-5 ">
           <h1 className="lg:text-4xl text-3xl text-blue-500">Community</h1>
           <ul className="pl-4 pt-2 text-neutral-200 list-disc">
             <li>
@@ -26,9 +26,9 @@ export default function Problem() {
             </li>
             <li>
               <p>
-                In the current educational landscape, many students are
-                primarily focused on academic achievement and may not have the
-                chance to develop their soft skills with a community.
+                Online platforms have become prevalent in the Web3 industry.
+                However, the absence of face-to-face interactions can hinder
+                effective communication.
               </p>
             </li>
           </ul>
@@ -38,14 +38,14 @@ export default function Problem() {
           <ul className="pl-4 pt-2 text-zinc-300 list-disc">
             <li>
               <p>
-                A lack of intermediaries between Web 3.0 jobs and students
-                seeking employment can hinder the hiring process.
+                The job market in the Web3 industry is still evolving, and the
+                demand for skilled professionals often outpaces the supply.
               </p>
             </li>
             <li>
               <p>
-                In the current Web 3.0 landscape, acquiring clients and projects
-                can be a challenging task for new enthusiasts in the field.
+                A lack of intermediaries between Web 3.0 jobs and students
+                seeking employment can hinder the hiring process.
               </p>
             </li>
           </ul>
@@ -70,21 +70,21 @@ export default function Problem() {
           </ul>
         </div>
         <div className=" p-3 bg-gray-50 about-prob-card rounded-xl shadow-md lg:p-5">
-          <h1 className="lg:text-4xl text-3xl text-blue-500">Meetups</h1>
+          <h1 className="lg:text-4xl text-3xl text-blue-500">Fragmentation</h1>
           <ul className="pl-4 pt-2 text-zinc-300 list-disc">
             <li>
               <p>
-                Limited physical presence: As the Web 3.0 landscape is
-                decentralized, it can be challenging for community members to
-                gather in one physical location
+                The Web3 industry consists of various communities, protocols,
+                and platforms that operate independently, leading to
+                fragmentation. This can make it challenging to collaborate
+                effectively.
               </p>
             </li>
             <li>
               <p>
-                Lack of experienced organizers: As the Web 3.0 landscape is
-                still relatively new, there may be a shortage of experienced
-                organizers who have the skills and knowledge necessary to plan
-                and execute successful events.
+                Communities within the Web3 industry often operate in isolation,
+                hindering knowledge sharing, collaboration, and the collective
+                growth of the ecosystem.
               </p>
             </li>
           </ul>

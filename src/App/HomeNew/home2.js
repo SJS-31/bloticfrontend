@@ -15,9 +15,11 @@ const Home2 = () => {
             engagement, interactivity, gamification, and immersiveness.
           </p>
           <div class=" lg:text-left">
+          <a href="About">
             <button class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 uppercase tracking-widest font-semibold text-sm lg:text-lg rounded-full shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <a href="About">Explore Now</a>
+              Explore Now
             </button>
+            </a>
           </div>
         </div>
 

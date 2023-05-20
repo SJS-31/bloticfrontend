@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 
@@ -13,7 +13,6 @@ import {
   UserCircleIcon,
   ArrowLeftOnRectangleIcon,
   UserPlusIcon,
-
 } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -22,11 +21,9 @@ import {
 } from "@heroicons/react/20/solid";
 import logo from "../../assets/BLOTIC-OGO-(2)logo.png";
 
-
-
-const handlelogout =()=>{
-  console.log("clcer loacl storage")
-}
+const handlelogout = () => {
+  console.log("clcer loacl storage");
+};
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
@@ -38,8 +35,7 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-
- const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const products = [
     {
@@ -52,33 +48,53 @@ export default function Example() {
       href: "/UserProfileform",
       icon: UserPlusIcon,
     },
-  
+
     {
       name: "Logout",
       href: "/",
       icon: ArrowLeftOnRectangleIcon,
-      myFunction(){
+      myFunction() {
         console.log("clcer loacl storage");
         localStorage.removeItem("usernamesign");
         localStorage.removeItem("username");
         localStorage.removeItem("token");
-        console.log(localStorage)
+        console.log(localStorage);
         const username = localStorage.getItem("username");
         console.log("local username formm nav.js ", username);
-        window.location.reload()
-        navigate("/")
-    
-      }},
-    
-    
+        window.location.reload();
+        navigate("/");
+      },
+    },
+
+    // {
+    //   name: "Login",
+    //   href: "/Log",
+    //   icon: ArrowLeftOnRectangleIcon,
+    // },
   ];
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrolledDown = prevScrollPos < currentScrollPos;
+
+      setIsNavbarVisible(!isScrolledDown);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
 
   return (
     <header className=" bg-none bg-opacity-30 fixed top-0 z-50 w-full">
       <nav
-        className="mx-auto flex max-w-7xl   items-center justify-between p-6 lg:px-8"
+      // {`fixed w-full ${isNavbarVisible ? 'block' : 'hidden'}`}
+        className={`  ${isNavbarVisible ? 'block' : 'hidden'} mx-auto flex max-w-7xl   items-center justify-between p-6 lg:px-8`}
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
@@ -87,6 +103,7 @@ export default function Example() {
             <img className="h-12 w-auto" src={logo} alt="" />
           </Link>
         </div>
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -98,20 +115,28 @@ export default function Example() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <Link to="/Bounty"
+          <Link
+            to="/Bounty"
             className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
           >
             Bounty
           </Link>
-          <Link to="/Learning"
+          <Link
+            to="/Learning"
             className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
           >
             Learning
           </Link>
-          <Link to="/events" className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white">
+          <Link
+            to="/events"
+            className="text-lg  leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
+          >
             Events
           </Link>
-          <Link to="/About" className="text-lg leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white">
+          <Link
+            to="/About"
+            className="text-lg leading-6 rounded-xl hover:bg-blue-500 hover:bg-opacity-20 hover:text-blue-700 px-3 py-1 text-white"
+          >
             About
           </Link>
         </Popover.Group>
@@ -150,7 +175,8 @@ export default function Example() {
               <Popover.Panel className="absolute -right-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
                 {/* products */}
                 <div className="p-4">
-                  {products.map((item) => (
+                  {products.map((item) => {
+                   return (
                     <div
                       key={item.name}
                       className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
@@ -162,7 +188,9 @@ export default function Example() {
                         />
                       </div>
                       <div className="flex-auto">
-                        <Link to={item.href} onClick={() => item.myFunction()}
+                        <Link
+                          to={item.href}
+                          onClick={() => item.myFunction()}
                           className="block font-semibold text-gray-900"
                         >
                           {item.name}
@@ -170,15 +198,19 @@ export default function Example() {
                         </Link>
                       </div>
                     </div>
-                  ))}
+                  );
+                 
+                  })}
                 </div>
-                
               </Popover.Panel>
             </Transition>
           </Popover>
-          {/* <Link to="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </Link> */}
+          <Link
+            to="#"
+            className="ml-5 text-sm  leading-6 rounded-xl bg-blue-600 px-3  text-white"
+          >
+            vBeta
+          </Link>
         </div>
       </nav>
 
@@ -193,11 +225,14 @@ export default function Example() {
           <div className="flex items-center justify-between">
             <Link to="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-12 w-auto"
-                src={logo}
-                alt=""
-              />
+              <img className="h-12 w-auto" src={logo} alt="" />
+            </Link>
+
+            <Link
+              to="#"
+              className="ml-24 text-sm  leading-6 rounded-lg bg-blue-500 px-2  text-white"
+            >
+              vBeta
             </Link>
             <button
               type="button"
@@ -211,21 +246,29 @@ export default function Example() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                
-                <Link to="/Bounty"
+                <Link
+                  to="/Bounty"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Bounty
                 </Link>
-                <Link to="/Learning"
+                <Link
+                  to="/Learning"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Learning
                 </Link>
-                <Link to="/About"
+                <Link
+                  to="/About"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   About
+                </Link>
+                <Link
+                  to="/Events"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Events
                 </Link>
               </div>
               <div className="py-6">
@@ -260,12 +303,14 @@ export default function Example() {
                           aria-hidden="true"
                         />
                       </Disclosure.Button>
+
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...products].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as={Link}
-                            to={item.href } onClick={() => item.myFunction()}
+                            to={item.href}
+                            onClick={() => item.myFunction()}
                             className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                           >
                             {item.name}

@@ -12,15 +12,16 @@ function App() {
       <section className="roadmap-section">
         <div className="roadmap-heading">
           <div>
-            <h1>
+            <h1 className="font-bold mx-3">
               Embark on your journey in
               <br />
               WEB3 with us!
             </h1>
-            <p>
+            <p className="lg:px-16">
               Discover the essential resources and steps needed to successfully
-              traverse the landscape of WEB3 development,
-              <br />  from blockchain basics
+              traverse the landscape of WEB3 development, 
+              <br/>
+              from blockchain basics
               and smart contracts to decentralized applications and beyond.
             </p>
 

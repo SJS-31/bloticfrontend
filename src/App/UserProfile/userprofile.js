@@ -47,8 +47,7 @@ export default function Userprofile() {
               <div class="bg-slate-800  shadow rounded-lg p-6">
                 <div class="flex flex-col items-center">
                   <img
-                    src="https://randomuser.me/api/portraits/men/94.jpg"
-              
+                    src="https://randomuser.me/api/portraits/lego/5.jpg"
                     class="w-24 h-24 bg-gray-300 rounded-full mb-4 shrink-0"
                   ></img>
                   <h1 class="text-xl text-slate-100 font-bold">
@@ -62,53 +61,57 @@ export default function Userprofile() {
                     </h1>
                   </div>
                 </div>
-                <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
+                <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-25 dark:opacity-100" />
 
                 <div class="flex flex-col">
-                  <span class="text-cyan-500 uppercase font-bold text-xl mb-2">
+                  <span class="text-blue-500 uppercase font-bold text-xl mb-2">
                     Skills
                   </span>
                   <ul className="pl-4 text-slate-300 list-disc">
-                    <li class="mb-2">{urdata.skill1?urdata.skill1:"----"}</li>
-                    <li class="mb-2">{urdata.skill2?urdata.skill2:"----"}</li>
-                    <li class="mb-2">{urdata.skill3?urdata.skill3:"----"}</li>
-                    <li class="mb-2">{urdata.skill4?urdata.skill4:"----"}</li>
-                    <li class="mb-2">{urdata.skill5?urdata.skill5:"----"}</li>
+                    <li class="mb-2">
+                      {urdata.skill1 ? urdata.skill1 : "----"}
+                    </li>
+                    <li class="mb-2">
+                      {urdata.skill2 ? urdata.skill2 : "----"}
+                    </li>
+                    <li class="mb-2">
+                      {urdata.skill3 ? urdata.skill3 : "----"}
+                    </li>
+                    <li class="mb-2">
+                      {urdata.skill4 ? urdata.skill4 : "----"}
+                    </li>
+                    <li class="mb-2">
+                      {urdata.skill5 ? urdata.skill5 : "----"}
+                    </li>
                   </ul>
                 </div>
 
                 <div className="w-full pt-4 space-y-3">
-                  {/* <p className="text-center text-xl text-cyan-500 font-medium">Follow us on</p> */}
+                  {/* <p className="text-center text-xl text-blue-500 font-medium">Follow us on</p> */}
                   <div className="flex justify-between w-full md:max-w-max  md:space-x-8 mx-auto">
-                    <a target="_blank" href="https://twitter.com/Blotic_web3">
+                    <a target="_blank" href={urdata.twitter}>
                       <img src={twitter} alt="twitter" className="w-6 h-6" />
                     </a>
-                    <a
-                      target="_blank"
-                      href="https://www.linkedin.com/company/blotic/"
-                    >
+
+                    <a target="_blank" href={urdata.linkedin}>
                       <img src={linkedin} alt="linkedin" className="w-6 h-6" />
                     </a>
-                    <a
-                      target="_blank"
-                      href="https://www.instagram.com/blotic_web3/"
-                    >
+
+                    <a target="_blank" href={urdata.insta}>
                       <img
                         src={instagram}
                         alt="instagram"
                         className="w-6 h-6"
                       />
                     </a>
+
                     <a
                       target="_blank"
                       href="https://discord.com/channels/962557015975149580/962562037681111110"
                     >
                       <img src={discord} alt="discord" className="w-6 h-6" />
                     </a>
-                    <a
-                      target="_blank"
-                      href="https://discord.com/channels/962557015975149580/962562037681111110"
-                    >
+                    <a target="_blank" href={urdata.github}>
                       <img src={github} alt="discord" className="w-6 h-6" />
                     </a>
                   </div>
@@ -118,47 +121,58 @@ export default function Userprofile() {
             <div class="col-span-4 sm:col-span-9">
               <div class="bg-slate-800   shadow rounded-lg p-6">
                 <div className="flex justify-between">
-                  <h2 class="text-xl font-bold text-cyan-500 mb-4">About Me</h2>
+                  <h2 class="text-xl font-bold text-blue-500 mb-4">About Me</h2>
                 </div>
-                <p class="text-slate-300">{urdata.about?urdata.about:"Edit your profile"}</p>
+                <p class="text-slate-300">
+                  {urdata.about ? urdata.about : "Edit your profile"}
+                </p>
 
-                <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-cyan-500 to-transparent opacity-25 dark:opacity-100" />
+                <hr class="my-8 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-25 dark:opacity-100" />
 
-                <h2 class="text-xl font-bold text-cyan-500 mt-6 mb-4">
+                <h2 class="text-xl font-bold text-blue-500 mt-6 mb-4">
                   Projects
                 </h2>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-slate-400 font-bold">Project 1</span>
-                    <p>
-                      <span class="text-slate-400">---</span>
-                    </p>
+                    <span class="text-white font-bold">
+                      {urdata.companyname ? urdata.companyname : "Project 1"}
+                    </span>
+                    {/* <p>
+                      
+                      <span class="text-slate-400 mr-2">{urdata.desc}time</span>
+                      <span class="text-slate-400">{urdata.desc}time</span>
+                    </p> */}
                   </div>
-                  <p class="mt-2 text-slate-300">{urdata.companyname?urdata.companyname:"----"}</p>
+                  <p class="mt-2 text-slate-300">
+                    {urdata.desc ? urdata.desc : "Description"}
+                  </p>
                 </div>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-slate-400 font-bold">Project 2</span>
-                    <p>
-                      <span class="text-slate-400">---</span>
-                    </p>
+                    <span class="text-white font-bold">
+                      {urdata.companyname1 ? urdata.companyname1 : "Project 2"}
+                    </span>
                   </div>
-                  <p class="mt-2 text-slate-300">{urdata.companyname1?urdata.companyname1:"----"}</p>
+                  <p class="mt-2 text-slate-300">
+                    {urdata.desc1 ? urdata.desc1 : "Description"}
+                  </p>
                 </div>
                 <div class="mb-6">
                   <div class="flex justify-between">
-                    <span class="text-slate-400 font-bold">Project 3</span>
-                    <p>
-                      <span class="text-slate-400">---</span>
-                    </p>
+                    <span class="text-white font-bold">
+                      {urdata.companyname2 ? urdata.companyname2 : "Project 2"}
+                    </span>
                   </div>
-                  <p class="mt-2 text-slate-300">{urdata.companyname2?urdata.companyname2:"----"}</p>
+                  <p class="mt-2 text-slate-300">
+                    {urdata.desc2 ? urdata.desc2 : "Description"}
+                  </p>
                 </div>
                 <div class="mb-6">
-                  
-                  <button class="bg-blue-600 hover:bg-blue-500  text-white px-4 py-2 tracking-widest font-semibold text-sm lg:text-lg rounded-lg shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    <a href="/UserProfileform">Edit Profile</a>
-                  </button>
+                  <a href="/UserProfileform">
+                    <button class="bg-blue-600 hover:bg-blue-500  text-white px-4 py-2 tracking-widest font-semibold text-sm lg:text-lg rounded-lg shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Edit Profile
+                    </button>
+                  </a>
                 </div>
               </div>
             </div>

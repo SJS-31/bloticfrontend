@@ -21,13 +21,15 @@ const Home = () => {
             <span class="text-blue-500">WEB3 ENTHUSIAST</span>
           </h1>
           <p class="font-normal text-md mx-5 my-5 lg:mx-5 text-white md:text-3xl  md:leading-12  text-left md:text-left">
-            An ecosystem to acquire Web3 knowledge with practical expertise. A
-            way to unlock your quest for blockchain.
+            Embark on your Web3 journey today and discover rewarding
+            opportunities to earn without the need for advanced expertise.
           </p>
           <div class="mx-5 md:text-left">
-            <button class="bg-blue-600 hover:bg-blue-500  text-white px-8 py-4 uppercase tracking-widest font-semibold text-sm lg:text-lg rounded-full shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            <a href="Bounty">Explore Now</a>
-            </button>
+            <a href="Bounty">
+              <button class="bg-blue-600 hover:bg-blue-500  text-white px-8 py-4 uppercase tracking-widest font-semibold text-sm lg:text-lg rounded-full shadow-lg transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                Explore Now
+              </button>
+            </a>
           </div>
         </div>
         <div class="w-full md:w-auto md:ml-6 mt-8 md:mt-0">

@@ -3,6 +3,9 @@ import Logo from "../../assets/BLOTIC-OGO-(2)logo.png";
 import { HandRaisedIcon } from "@heroicons/react/24/outline";
 import { senddata } from "../../helper/helper";
 import { useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 export default function Example() {
   const [username, setusername] = useState("")
@@ -14,19 +17,25 @@ export default function Example() {
     senddata(username , email ,password ).then((res)=>{console.log(res)
       window.location.reload()
     })
-  };
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
 
   return (
     <>
+    <Toaster />
       <div className="h-screen">
         <div className="flex min-h-full flex-1 flex-col items-center justify-center px-6 py-12 lg:px-8">
           <div className="lg:h-1/2 lg:w-1/3 bg-gray-800 px-8 py-10 rounded-xl">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-              <img
-                className="mx-auto h-12 w-auto"
-                src={Logo}
-                alt="Your Company"
-              />
+            <a href="/">
+                <img
+                  className="mx-auto h-12 w-auto"
+                  src={Logo}
+                  alt="Your Company"
+                />
+              </a>
               <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-slate-100">
                 Sign up to your account
               </h2>
@@ -60,7 +69,7 @@ export default function Example() {
                       htmlFor="password"
                       className="block text-sm font-medium leading-6 text-white"
                     >
-                      Password
+                      Password.
                     </label>
                   </div>
                   <div className="mt-2">

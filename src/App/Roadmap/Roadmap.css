@@ -14,7 +14,7 @@
     height: 100vh;
     /* background: radial-gradient(circle at 52.1% -29.6%, rgb(144, 17, 105) 0%, rgb(51, 0, 131) 100.2%); */
     /* background: linear-gradient(295deg, #2329cc, #000000); */
-    background: linear-gradient(115deg, #004ff9, #000000);
+    background: linear-gradient(115deg, #121213, #000000);
     /* background: linear-gradient(115deg, #141e30, #243b55); */
   
     overflow: hidden;
@@ -78,7 +78,7 @@
   /* rectangles */
   
   .roadmap-area{
-    background: #4e54c8;  
+    /* background: #010101;   */
     background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
     width: 100%;
     height:100vh;
@@ -221,7 +221,9 @@
   
   .roadmap-heading p{
     margin-top: 30px;
-    color : wheat
+    color : whitesmoke;
+    padding: 25px;
+    
   }
   
   
@@ -233,7 +235,7 @@
     padding: 10px 20px;
     border: none;
     font-size: 15px;
-    color: #fff;
+    color: #ffff;
     border-radius: 60px;
     letter-spacing: 2px;
     /* font-weight: 700; */
@@ -242,8 +244,8 @@
     transition-property: box-shadow;
     z-index: 2;
     position: relative;
-    background: rgb(0,140,255);
-    box-shadow: 0 0 25px rgb(0,140,255);
+    background: #1d4ed8;
+    box-shadow: 0 0 5px rgb(221, 221, 229);
   }
   
   .roadmap-shadow__btn a{
@@ -251,10 +253,10 @@
   }
   
   .roadmap-shadow__btn:hover {
-    box-shadow: 0 0 5px rgb(0,140,255),
-                0 0 25px rgb(0,140,255),
-                0 0 50px rgb(0,140,255),
-                0 0 100px rgb(0,140,255);
+    box-shadow: 0 0 5px rgb(21, 22, 23),
+                0 0 25px rgb(20, 20, 21),
+                0 0 50px rgb(10, 10, 11),
+                0 0 100px rgb(52, 53, 54);
   
     cursor: pointer;
   }
