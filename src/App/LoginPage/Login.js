@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../../assets/BLOTIC-OGO-(2)logo.png";
 import { useNavigate } from "react-router-dom";
-import { sendlogin } from "../../helper/helper";
-import toast, { Toaster } from 'react-hot-toast';
+import { sendlogin, getUser } from "../../helper/helper";
+import toast, { Toaster } from "react-hot-toast";
 
-const notify = () => toast.error('Inavlid username or passwrod');
+const notify = () => toast.error("Inavlid username or passwrod");
 
 export default function Example() {
   const navigate = useNavigate();
@@ -14,25 +14,44 @@ export default function Example() {
   const [password, setpassword] = useState();
   const handlesubmit = (event) => {
     event.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
     sendlogin(email, password)
       .then((res) => {
-        console.log(res);
-        window.location.reload();
-        console.log("calling /Log");
+        // console.log(res);
+        // window.location.reload();
+        // console.log("calling /Log");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setinvalidcredmssg(err.message);
         console.log(invalidcredmssg);
         if (invalidcredmssg || err) {
           // alert("Inavlid username or passwrod");
-          setinvalidcredmssg("")
-          notify()
+          setinvalidcredmssg("");
+          notify();
         }
       });
-    // window.location.reload()
+      console.log("fdfghjkjh")
+    window.location.reload();
   };
+
+  async function googellogin() {
+    try {
+      getUser();
+      window.open(`http://localhost:8080/auth/google`, "_self");
+
+      console.log("lccgh");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  // googellogin().then(()=>{
+  //    setTimeout(()=>{
+  //     getUser()
+  //    },5000)
+  // })
+
   return (
     <>
       <div className="h-screen">
@@ -58,7 +77,7 @@ export default function Example() {
                     htmlFor="email"
                     className="block text-sm font-medium leading-6 text-white"
                   >
-                    User Name
+                    User Email
                   </label>
                   <div className="mt-2">
                     <input
@@ -116,10 +135,18 @@ export default function Example() {
                     >
                       Sign in
                     </button>
+
                     <Toaster />
                   </a>
                 </div>
               </form>
+
+              <button
+                onClick={googellogin}
+                className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Sign in with google
+              </button>
 
               <p className="mt-10 text-center text-lg text-gray-500">
                 Not a member?{" "}
