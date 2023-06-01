@@ -38,7 +38,7 @@ export default function Example() {
   async function googellogin() {
     try {
       getUser();
-      window.open(`http://localhost:8080/auth/google`, "_self");
+      window.open(`http://156.67.214.139:8080/auth/google`, "_self");
 
       console.log("lccgh");
     } catch (err) {
