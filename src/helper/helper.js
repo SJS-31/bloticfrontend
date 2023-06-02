@@ -1,8 +1,8 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import toast, { Toaster } from "react-hot-toast";
-const Baseurl = "http://156.67.214.139:8080";
-// const Baseurl = "https://bloticbounty-backend.onrender.com"
+// const Baseurl = "http://156.67.214.139:8080";
+const Baseurl = "https://blotic.org"
 // const Baseurl = "http://localhost:8080"
 
 // import dotenv from "dotenv"
